@@ -465,3 +465,26 @@ a:hover { color: var(--rojizo); }
 html, body, .page, .rail, .chain { overflow-x: clip; }
 
 @media (max-width: 860px) { .chain__grid { grid-template-columns: 1fr; } .chain__iso svg { max-width: 220px; } }
+
+/* =========================================================
+   Botón flotante de WhatsApp
+   ========================================================= */
+.wa {
+  position: fixed; right: 22px; bottom: 22px; z-index: 40;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 22px 13px 16px; border-radius: 999px;
+  background: var(--rojo); color: var(--blanco); text-decoration: none;
+  font-family: var(--f-sub); font-weight: 800; font-style: italic; font-size: 14px; letter-spacing: .02em;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .28);
+  transition: transform .2s, background .2s;
+  animation: wa-in .5s .8s both;
+}
+.wa:hover { transform: translateY(-3px); background: var(--rojizo); }
+.wa:focus-visible { outline: 3px solid var(--mostaza); outline-offset: 3px; }
+@keyframes wa-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+body.no-scroll .wa { display: none; }
+@media (max-width: 560px) {
+  .wa { right: 14px; bottom: 14px; padding: 14px; }
+  .wa__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+}
+@media (prefers-reduced-motion: reduce) { .wa { animation: none; } }

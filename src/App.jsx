@@ -17,6 +17,7 @@ import Footer from './components/Footer.jsx';
 import FX from './components/FX.jsx';
 import SupplyChain from './components/SupplyChain.jsx';
 import Statement from './components/Statement.jsx';
+import WhatsAppButton from './components/WhatsAppButton.jsx';
 import { PAGES } from './data/content.js';
 import { useRoute } from './lib/router.js';
 import { useMotion } from './lib/motion.js';
@@ -66,6 +67,7 @@ export default function App() {
         )}
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }

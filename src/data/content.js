@@ -210,3 +210,10 @@ export const STATEMENT = {
   text: 'Conectamos la fabricación de alta calidad con los mercados globales.',
   zh: '连接优质制造与全球市场',
 };
+
+// ---------- Botón flotante de WhatsApp ----------
+// Número tomado de https://huicheng-global.com. Cambiar si la empresa usa otro para WhatsApp.
+export const WHATSAPP = {
+  number: '8618102513690',
+  message: 'Hola Huicheng, quiero información para ser distribuidor.',
+};
