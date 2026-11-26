@@ -237,3 +237,16 @@ export const NOT_FOUND = {
   title: 'Esta ruta no está en nuestro mapa.',
   text: 'La página que buscas no existe o cambió de dirección. Vuelve al inicio o escríbenos y te ayudamos.',
 };
+
+// Página de Gracias (después de enviar el formulario).
+export const THANKS = {
+  zh: '谢谢', // (*)
+  title: '¡Gracias por escribirnos!',
+  text: 'Recibimos tu solicitud de cotización. Nuestro equipo comercial la revisará y te responderá al correo que nos dejaste.',
+  demo: 'Modo demostración: el formulario aún no está conectado a un correo, así que no se envió nada.',
+  steps: [
+    { title: 'Revisamos tu solicitud', zh: '审核', text: 'Analizamos los productos y marcas que te interesan.' },
+    { title: 'Preparamos tu cotización', zh: '报价', text: 'Con términos de pago y logística de exportación claros.' },
+    { title: 'Te contactamos', zh: '联系', text: 'Te escribimos para resolver dudas y coordinar el siguiente paso.' },
+  ],
+};

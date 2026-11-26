@@ -1,6 +1,8 @@
 import { useRef, useState } from 'react';
 import { CONTACT, FORM_ENDPOINT } from '../data/content.js';
 import Eyebrow from './Eyebrow.jsx';
+import { to } from '../lib/router.js';
+import { setThanksName } from '../lib/thanks.js';
 
 const EMPTY = { nombre: '', empresa: '', pais: '', correo: '', mensaje: '' };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -67,8 +69,11 @@ export default function Contact() {
         // Modo demostración: sin endpoint configurado no se envía nada.
         await new Promise((r) => setTimeout(r, 700));
       }
-      setStatus('sent');
+      // Enviado: lleva a la página de Gracias (#/gracias).
+      setThanksName(values.nombre);
       setValues(EMPTY);
+      setStatus('idle');
+      window.location.hash = to('gracias');
     } catch {
       setStatus('error');
     }

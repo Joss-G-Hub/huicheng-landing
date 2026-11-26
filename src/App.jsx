@@ -22,6 +22,7 @@ import BackToTop from './components/BackToTop.jsx';
 import Loader from './components/Loader.jsx';
 import Curtain from './components/Curtain.jsx';
 import NotFound from './components/NotFound.jsx';
+import Thanks from './components/Thanks.jsx';
 import BrandStrip from './components/BrandStrip.jsx';
 import { PAGES } from './data/content.js';
 import { useRoute } from './lib/router.js';
@@ -36,7 +37,8 @@ const SECTIONS = {
   blog: [Blog],
   contacto: [Contact],
 };
-const PAGE_IDS = ['inicio', ...Object.keys(SECTIONS)];
+// 'gracias' no aparece en el menú: se llega después de enviar el formulario.
+const PAGE_IDS = ['inicio', ...Object.keys(SECTIONS), 'gracias'];
 
 export default function App() {
   const target = useRoute(PAGE_IDS);
@@ -49,6 +51,8 @@ export default function App() {
       ? 'Huicheng — Conectando mercados globales'
       : route === '404'
         ? 'Página no encontrada | Huicheng'
+        : route === 'gracias'
+          ? '¡Gracias! | Huicheng'
         : `${PAGES[route].title} | Huicheng`;
   }, [route]);
 
@@ -73,6 +77,8 @@ export default function App() {
           </>
         ) : route === '404' ? (
           <NotFound />
+        ) : route === 'gracias' ? (
+          <Thanks />
         ) : (
           <>
             <PageHero page={PAGES[route]} />
