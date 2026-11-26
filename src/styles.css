@@ -497,7 +497,7 @@ body.no-scroll .wa { display: none; }
 .loader {
   position: fixed; inset: 0; z-index: 120; display: grid; place-items: center;
   background: var(--blanco);
-  transition: transform .75s cubic-bezier(.7, 0, .2, 1), visibility 0s .75s;
+  transition: transform .45s cubic-bezier(.7, 0, .2, 1), visibility 0s .45s;
 }
 .loader--out { transform: translateY(-100%); visibility: hidden; }
 .loader__inner { display: grid; justify-items: center; gap: 18px; transition: opacity .3s; }
@@ -505,13 +505,13 @@ body.no-scroll .wa { display: none; }
 .loader__iso { width: 74px; height: auto; overflow: visible; }
 .loader__iso path {
   fill: var(--rojo); opacity: 0; transform: translateX(-14px);
-  animation: loader-stroke .55s cubic-bezier(.2, .8, .2, 1) forwards; animation-delay: calc(var(--i) * 140ms + 100ms);
+  animation: loader-stroke .4s cubic-bezier(.2, .8, .2, 1) forwards; animation-delay: calc(var(--i) * 80ms);
 }
 @keyframes loader-stroke { to { opacity: 1; transform: none; } }
-.loader__word { width: 180px; height: auto; opacity: 0; animation: loader-fade .6s .55s forwards; }
+.loader__word { width: 180px; height: auto; opacity: 0; animation: loader-fade .4s .25s forwards; }
 @keyframes loader-fade { to { opacity: 1; } }
 .loader__bar { width: 180px; height: 3px; background: #EDEDED; overflow: hidden; border-radius: 3px; }
-.loader__bar span { display: block; height: 100%; background: var(--rojo); transform-origin: left; transform: scaleX(0); animation: loader-bar 1.2s .1s cubic-bezier(.4, 0, .2, 1) forwards; }
+.loader__bar span { display: block; height: 100%; background: var(--rojo); transform-origin: left; transform: scaleX(0); animation: loader-bar .75s 0s cubic-bezier(.4, 0, .2, 1) forwards; }
 @keyframes loader-bar { to { transform: scaleX(1); } }
 
 /* Cortina entre páginas */
@@ -521,9 +521,9 @@ body.no-scroll .wa { display: none; }
   transform: translateX(-100%); visibility: hidden;
 }
 .curtain img { width: 64px; height: auto; opacity: 0; transform: scale(.7); transition: opacity .25s, transform .4s; }
-.curtain--in { visibility: visible; transform: none; transition: transform .42s cubic-bezier(.7, 0, .3, 1); pointer-events: auto; }
-.curtain--in img { opacity: 1; transform: none; transition-delay: .18s; }
-.curtain--out { visibility: visible; transform: translateX(100%); transition: transform .52s cubic-bezier(.7, 0, .3, 1); }
+.curtain--in { visibility: visible; transform: none; transition: transform .26s cubic-bezier(.7, 0, .3, 1); pointer-events: auto; }
+.curtain--in img { opacity: 1; transform: none; transition-delay: .08s; }
+.curtain--out { visibility: visible; transform: translateX(100%); transition: transform .32s cubic-bezier(.7, 0, .3, 1); }
 .curtain--out img { opacity: 0; transform: scale(1.15); }
 
 /* Volver arriba (encima del botón de WhatsApp) */

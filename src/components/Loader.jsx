@@ -8,8 +8,7 @@ export default function Loader() {
 
   useEffect(() => {
     const start = performance.now();
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const minTime = reduce ? 0 : 1300;
+    const minTime = 800;
     let done = false;
     const timers = [];
     const finish = () => {
@@ -18,12 +17,12 @@ export default function Loader() {
       const wait = Math.max(0, minTime - (performance.now() - start));
       timers.push(setTimeout(() => {
         setState('out');
-        timers.push(setTimeout(() => setState('gone'), 800));
+        timers.push(setTimeout(() => setState('gone'), 500));
       }, wait));
     };
     if (document.readyState === 'complete') finish();
     else window.addEventListener('load', finish);
-    timers.push(setTimeout(finish, 2600)); // por si alguna imagen tarda demasiado
+    timers.push(setTimeout(finish, 1600)); // por si alguna imagen tarda demasiado
     return () => {
       window.removeEventListener('load', finish);
       timers.forEach(clearTimeout);
