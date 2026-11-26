@@ -106,16 +106,17 @@ export const PORTFOLIO = {
 };
 
 // Sección "Mundo Huicheng": basada en el texto del sitio actual (página Mundo Huicheng / XURI World).
+// x / y: posición de cada país en el mapa de puntos (2200 × 1154). lift: altura de la curva de la ruta.
 export const WORLD = {
   eyebrow: 'MUNDO HUICHENG',
   eyebrowZh: '辉程世界', // (*)
   title: 'La calidad no conoce fronteras.',
   text: 'Nuestras marcas están presentes en América Latina, Asia y Europa, respaldadas por una red sólida de aliados comerciales y un equipo comprometido con el soporte logístico y postventa.',
   countries: [
-    { name: 'China', zh: '中国', role: 'Base de innovación tecnológica y manufactura. Desde nuestra sede en Guangzhou gestionamos la operación logística, comercial y postventa.' },
-    { name: 'Ecuador', zh: '厄瓜多尔', role: 'Lideramos el mercado con distribución nacional, patrocinios deportivos y cercanía con el consumidor final.' },
-    { name: 'México', zh: '墨西哥', role: 'Trabajamos de la mano con importadores mayoristas y distribuidores clave.' },
-    { name: 'Cuba', zh: '古巴', role: 'Nuestros productos se han ganado la confianza de los motociclistas por su resistencia y durabilidad.' },
+    { name: 'China', zh: '中国', hub: true, x: 1708, y: 612, lx: 0, ly: -48, role: 'Base de innovación tecnológica y manufactura. Desde nuestra sede en Guangzhou gestionamos la operación logística, comercial y postventa.' },
+    { name: 'Ecuador', zh: '厄瓜多尔', x: 590, y: 758, lift: 160, lx: 38, ly: 62, anchor: 'start', role: 'Lideramos el mercado con distribución nacional, patrocinios deportivos y cercanía con el consumidor final.' },
+    { name: 'México', zh: '墨西哥', x: 505, y: 625, lift: 430, lx: -34, ly: -34, anchor: 'end', role: 'Trabajamos de la mano con importadores mayoristas y distribuidores clave.' },
+    { name: 'Cuba', zh: '古巴', x: 602, y: 612, lift: 300, lx: 40, ly: 14, anchor: 'start', role: 'Nuestros productos se han ganado la confianza de los motociclistas por su resistencia y durabilidad.' },
   ],
 };
 
@@ -216,4 +217,23 @@ export const STATEMENT = {
 export const WHATSAPP = {
   number: '8618102513690',
   message: 'Hola Huicheng, quiero información para ser distribuidor.',
+};
+
+// Banda de logos en movimiento (Inicio).
+export const BRAND_STRIP = {
+  title: 'Nuestras marcas',
+  zh: '我们的品牌', // (*)
+  logos: [
+    { name: 'Xuri Motos', logo: 'marca/marca-xuri-motos.svg', h: 46 },
+    { name: 'Orijinaru', logo: 'marca/marca-orijinaru.svg', h: 52 },
+    { name: 'Horux', logo: 'marca/marca-horux.svg', h: 44 },
+    { name: 'Accexuri', logo: 'marca/marca-accexuri.svg', h: 26 },
+  ],
+};
+
+// Página 404 (dirección que no existe).
+export const NOT_FOUND = {
+  zh: '页面未找到', // (*)
+  title: 'Esta ruta no está en nuestro mapa.',
+  text: 'La página que buscas no existe o cambió de dirección. Vuelve al inicio o escríbenos y te ayudamos.',
 };

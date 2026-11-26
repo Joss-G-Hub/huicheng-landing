@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { WORLD } from '../data/content.js';
 import Eyebrow from './Eyebrow.jsx';
+import WorldMap from './WorldMap.jsx';
 
 export default function World() {
+  const [active, setActive] = useState(null);
   return (
     <section id="mundo" className="section section--steel">
       <div className="container">
@@ -10,9 +13,17 @@ export default function World() {
           <h2 className="h2 words">{WORLD.title}</h2>
           <p className="lead lead--muted">{WORLD.text}</p>
         </div>
+        <WorldMap active={active} onActive={setActive} />
         <ul className="world">
           {WORLD.countries.map((c, i) => (
-            <li key={c.name} data-tilt className="world__item reveal" style={{ '--d': `${i * 90}ms` }}>
+            <li
+              key={c.name}
+              data-tilt
+              className={`world__item reveal${active === c.name ? ' is-active' : ''}`}
+              style={{ '--d': `${i * 90}ms` }}
+              onMouseEnter={() => setActive(c.name)}
+              onMouseLeave={() => setActive(null)}
+            >
               <h3>
                 {c.name}
                 <span lang="zh-Hans">{c.zh}</span>

@@ -23,6 +23,9 @@ Inicio · Nosotros · Portafolio · Mundo · Blog · Contacto
 - Navegación por páginas con menú fijo y menú adaptado a celular.
 - Efectos de parallax y animaciones al hacer scroll.
 - Formulario de contacto con validación de campos.
+- Pantalla de carga con el logo y transición animada entre páginas.
+- Mapa interactivo con las rutas de exportación y banda de marcas en movimiento.
+- Botones de WhatsApp y "volver arriba", y página 404 personalizada.
 - Diseño responsive para computadora, tablet y celular.
 
 ## Estructura

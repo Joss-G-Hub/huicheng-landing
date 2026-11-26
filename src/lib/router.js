@@ -13,7 +13,8 @@ const read = () => {
 export const to = (id) => (id === 'inicio' ? '#/' : `#/${id}`);
 
 export function useRoute(pages) {
-  const valid = (r) => (r && pages.includes(r) ? r : 'inicio');
+  // Dirección vacía → Inicio. Dirección que no existe → página 404.
+  const valid = (r) => (!r ? 'inicio' : pages.includes(r) ? r : '404');
   const [route, setRoute] = useState(() => valid(read()));
 
   useEffect(() => {
@@ -25,11 +26,6 @@ export function useRoute(pages) {
     return () => window.removeEventListener('hashchange', onHash);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // Cada página nueva empieza arriba.
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-  }, [route]);
 
   return route;
 }

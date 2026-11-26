@@ -18,9 +18,15 @@ import FX from './components/FX.jsx';
 import SupplyChain from './components/SupplyChain.jsx';
 import Statement from './components/Statement.jsx';
 import WhatsAppButton from './components/WhatsAppButton.jsx';
+import BackToTop from './components/BackToTop.jsx';
+import Loader from './components/Loader.jsx';
+import Curtain from './components/Curtain.jsx';
+import NotFound from './components/NotFound.jsx';
+import BrandStrip from './components/BrandStrip.jsx';
 import { PAGES } from './data/content.js';
 import { useRoute } from './lib/router.js';
 import { useMotion } from './lib/motion.js';
+import { usePageTransition } from './lib/transition.js';
 
 // Qué secciones muestra cada página del menú.
 const SECTIONS = {
@@ -33,20 +39,26 @@ const SECTIONS = {
 const PAGE_IDS = ['inicio', ...Object.keys(SECTIONS)];
 
 export default function App() {
-  const route = useRoute(PAGE_IDS);
+  const target = useRoute(PAGE_IDS);
+  // "route" es la página que se ve; cambia cuando la cortina tapa la pantalla.
+  const [route, phase] = usePageTransition(target);
   useMotion(route);
 
   useEffect(() => {
     document.title = route === 'inicio'
       ? 'Huicheng — Conectando mercados globales'
-      : `${PAGES[route].title} | Huicheng`;
+      : route === '404'
+        ? 'Página no encontrada | Huicheng'
+        : `${PAGES[route].title} | Huicheng`;
   }, [route]);
 
   return (
     <>
       <a className="skip-link" href="#contenido">Saltar al contenido</a>
+      <Loader />
+      <Curtain phase={phase} />
       <FX />
-      <Header active={route} />
+      <Header active={target} />
       <main id="contenido" key={route} className="page">
         {route === 'inicio' ? (
           <>
@@ -54,10 +66,13 @@ export default function App() {
             <ValueBand />
             <Statement />
             <SupplyChain />
+            <BrandStrip />
             <Teasers />
             <Headquarters />
             <CtaBand />
           </>
+        ) : route === '404' ? (
+          <NotFound />
         ) : (
           <>
             <PageHero page={PAGES[route]} />
@@ -67,6 +82,7 @@ export default function App() {
         )}
       </main>
       <Footer />
+      <BackToTop />
       <WhatsAppButton />
     </>
   );
