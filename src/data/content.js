@@ -1,0 +1,212 @@
+// Todo el texto de la landing vive aquí, para editarlo sin tocar los componentes.
+// Fuentes: Manual de Identidad Corporativa Huicheng 2026 y el sitio actual https://huicheng-global.com
+// Los textos en chino marcados con (*) son traducciones nuevas: la empresa debe revisarlos.
+
+export const NAV = [
+  { id: 'nosotros', label: 'Nosotros', zh: '我们是谁' },
+  { id: 'portafolio', label: 'Portafolio', zh: '产品组合' },          // (*)
+  { id: 'mundo', label: 'Mundo Huicheng', zh: '辉程世界' },           // (*) el sitio usa 汇成世界; el logo usa 辉程
+  { id: 'blog', label: 'Blog', zh: '博客' },
+];
+export const NAV_CONTACT = { id: 'contacto', label: 'Contacto', zh: '联系我们' }; // (*) el sitio usa 接触
+
+export const HERO = {
+  tagline: 'Supera tus límites',
+  taglineZh: '超越你的极限',
+  kicker: 'CONECTANDO',
+  title: 'MERCADOS GLOBALES',
+  text: 'Exportamos repuestos y accesorios de alta calidad para motocicletas, exclusivamente para distribuidores de todo el mundo.',
+  primary: { label: 'Quiero ser distribuidor', href: '#/contacto' },
+  secondary: { label: 'Ver portafolio', href: '#/portafolio' },
+};
+
+// Banda roja bajo la portada (fortalezas citadas en huicheng-global.com)
+export const VALUES = [
+  { title: 'Respuesta rápida', zh: '快速响应', text: 'Atención comercial ágil para distribuidores.' },
+  { title: 'Entregas a tiempo', zh: '准时交付', text: 'Cumplimiento riguroso en cada embarque.' },
+  { title: 'Soporte postventa', zh: '售后支持', text: 'Acompañamiento después de cada compra.' },
+];
+
+export const HQ = {
+  eyebrow: 'NUESTRA SEDE',
+  eyebrowZh: '我们的办公室',
+  title: 'Guangzhou, China',
+  text: 'Desde nuestra oficina en el distrito Baiyun gestionamos la operación logística, comercial y postventa con nuestros aliados distribuidores.',
+  image: 'img/oficina-sede.webp',
+};
+
+export const ABOUT = {
+  eyebrow: 'NOSOTROS',
+  eyebrowZh: '我们是谁',
+  title: 'La columna vertebral de la corporación.',
+  text: 'Nos especializamos en la exportación de repuestos y accesorios de alta calidad para motocicletas, dirigidos exclusivamente a distribuidores. Con 9 años de trayectoria, hemos consolidado relaciones estratégicas en distintas regiones del mundo gracias a nuestra capacidad de respuesta, el cumplimiento en los tiempos de entrega y el soporte postventa.',
+  stats: [
+    { value: '9', label: 'años de trayectoria' },
+    { value: '4', label: 'mercados clave: China, Ecuador, México y Cuba' },
+    { value: '3', label: 'regiones: América Latina, Asia y Europa' },
+  ],
+  milestones: [
+    {
+      year: '2017',
+      title: 'El génesis operativo',
+      text: 'Huicheng surge impulsada por la consolidación de nuestras operaciones en mercados clave como Ecuador y México, respaldada por el éxito de nuestra marca de repuestos de motocicletas, Xuri.',
+    },
+    {
+      year: '2026',
+      title: 'El eje de la cadena de compra',
+      text: 'Nos consolidamos como el núcleo que controla directamente la cadena de suministro, desde la producción hasta la distribución a los diferentes mercados.',
+    },
+    {
+      year: 'FUTURO',
+      title: 'Plataforma integral',
+      text: 'Una plataforma integral y tecnológica que conecta de manera directa y automatizada a las fábricas con los mercados, dinamizando redes de valor globales.',
+      highlight: true,
+    },
+  ],
+};
+
+export const OPERATIONS = {
+  eyebrow: 'CÓMO OPERAMOS',
+  eyebrowZh: '运营模式', // (*)
+  title: 'Tres trazos que conectan origen y destino.',
+  text: 'Nuestro isotipo es un esquema exacto de la cadena de suministro: la manufactura de origen, la plataforma operativa y los mercados de destino.',
+  pillars: [
+    { title: 'Fábricas', zh: '工厂', text: 'Control directo de la manufactura y gestión integral de la producción desde el punto de origen.' },
+    { title: 'Ecosistema', zh: '生态系统', text: 'Plataforma tecnológica y operativa que integra, audita y optimiza toda la cadena de valor.' },
+    { title: 'Mercados', zh: '市场', text: 'Dinamización de redes de valor globales y posicionamiento estratégico de nuestro portafolio de marcas.' },
+  ],
+  photos: [
+    { src: 'img/chaleco-inspeccion.webp', alt: 'Chaleco de seguridad Huicheng para inspección en planta', strong: 'Auditoría en origen.', text: 'Validación de calidad antes de embarcar la mercancía.' },
+    { src: 'img/embalaje.webp', alt: 'Caja de embalaje logístico con el logotipo de Huicheng', strong: 'Exportación.', text: 'Embalaje logístico para transporte internacional.' },
+  ],
+};
+
+export const PORTFOLIO = {
+  eyebrow: 'PORTAFOLIO DE MARCAS',
+  eyebrowZh: '品牌组合', // (*)
+  title: 'Un ecosistema global de marcas.',
+  text: 'Una arquitectura híbrida que proyecta solidez industrial, potencia múltiples segmentos de mercado y asegura la rentabilidad de cada unidad de negocio.',
+  main: {
+    logo: 'marca/marca-xuri-motos.svg',
+    name: 'Xuri Motos',
+    link: 'https://xurisa.com',
+    text: 'El pilar comercial de cara al consumidor. De Xuri Motos se desprenden submarcas que capitalizan su prestigio y estándar de calidad.',
+    subbrands: [
+      { name: 'Xuri Motos Premium', text: 'Repuestos de alta rotación y volumen.' },
+      { name: 'Xuri Motos Racing', text: 'Línea técnica de rendimiento y performance.' },
+      { name: 'Xuri Motos Tires', text: 'Llantas y accesorios relacionados.' },
+      { name: 'Xurimotos', text: 'Motores y soluciones mecánicas.' },
+    ],
+  },
+  independent: [
+    { logo: 'marca/marca-orijinaru.svg', name: 'Orijinaru', text: 'Repuestos genuinos y precisión técnica.', h: 60 },
+    { logo: 'marca/marca-horux.svg', name: 'Horux', text: 'Indumentaria, lifestyle y cultura rider.', h: 56 },
+    { logo: 'marca/marca-accexuri.svg', name: 'Accexuri', text: 'Accesorios y desarrollo de nuevos productos, con sus submarcas Pro y Xtreme.', link: 'https://accexuri.com', wide: true },
+  ],
+};
+
+// Sección "Mundo Huicheng": basada en el texto del sitio actual (página Mundo Huicheng / XURI World).
+export const WORLD = {
+  eyebrow: 'MUNDO HUICHENG',
+  eyebrowZh: '辉程世界', // (*)
+  title: 'La calidad no conoce fronteras.',
+  text: 'Nuestras marcas están presentes en América Latina, Asia y Europa, respaldadas por una red sólida de aliados comerciales y un equipo comprometido con el soporte logístico y postventa.',
+  countries: [
+    { name: 'China', zh: '中国', role: 'Base de innovación tecnológica y manufactura. Desde nuestra sede en Guangzhou gestionamos la operación logística, comercial y postventa.' },
+    { name: 'Ecuador', zh: '厄瓜多尔', role: 'Lideramos el mercado con distribución nacional, patrocinios deportivos y cercanía con el consumidor final.' },
+    { name: 'México', zh: '墨西哥', role: 'Trabajamos de la mano con importadores mayoristas y distribuidores clave.' },
+    { name: 'Cuba', zh: '古巴', role: 'Nuestros productos se han ganado la confianza de los motociclistas por su resistencia y durabilidad.' },
+  ],
+};
+
+export const MISSION = [
+  { title: 'Misión', zh: '使命', text: 'Conectar la fabricación de alta calidad con los mercados globales mediante una plataforma integrada de productos, logística, tecnología y servicios, para impulsar el crecimiento sostenible de distribuidores e importadores con soluciones eficientes, transparentes y rentables.' },
+  { title: 'Visión', zh: '愿景', text: 'Convertirnos en la plataforma de cadena de suministro más confiable de América Latina para el mercado de posventa de motocicletas y sus refacciones.' },
+];
+
+// Publicaciones del blog: contenido de EJEMPLO, redactado a partir de lo que hace la
+// empresa. Reemplazar por las publicaciones reales cuando la empresa las entregue.
+export const POSTS = [
+  {
+    image: 'img/chaleco-inspeccion.webp',
+    meta: 'Nov 2026 · Calidad',
+    title: 'Así inspeccionamos cada lote antes del embarque',
+    excerpt: 'Revisamos producto, cantidades y empaque en origen para que tu mercadería llegue tal como la pediste.',
+    href: '#/contacto',
+  },
+  {
+    image: 'img/embalaje.webp',
+    meta: 'Oct 2026 · Logística',
+    title: 'Embalaje de exportación: cómo protegemos tu carga',
+    excerpt: 'Cajas reforzadas, etiquetado bilingüe y consolidación para reducir daños y costos en el viaje.',
+    href: '#/contacto',
+  },
+  {
+    image: 'img/productos-repuestos.webp',
+    meta: 'Sep 2026 · Productos',
+    title: 'Repuestos y accesorios: qué ofrece nuestro portafolio',
+    excerpt: 'Un recorrido por las marcas del grupo y las líneas de producto disponibles para distribuidores.',
+    href: '#/portafolio',
+  },
+];
+
+export const CONTACT = {
+  eyebrow: 'CONTACTO',
+  eyebrowZh: '联系我们', // (*)
+  title: '¿Eres distribuidor o importador?',
+  text: 'Importa con nosotros. Cuéntanos qué necesitas y te enviamos una cotización con términos de pago y logística de exportación claros.',
+  // Datos tomados de https://huicheng-global.com
+  email: 'huicheng_group@outlook.com',
+  phone: '+86 181 0251 3690',
+  phoneHref: 'tel:+8618102513690',
+  address: 'Calle Qianhai No. 3, Torre C, Oficina 101, distrito Baiyun, Guangzhou, Guangdong, China',
+  addressZh: '广东省广州市白云区钱海街3号C栋101室',
+};
+
+// Dirección a la que se envía el formulario (por ejemplo un endpoint de Formspree,
+// Getform o el backend de la empresa). Mientras esté vacía, el formulario funciona
+// en modo demostración: valida los datos y muestra el mensaje de éxito sin enviar nada.
+export const FORM_ENDPOINT = '';
+
+// ---------- Páginas (cada pestaña del menú abre su propia página) ----------
+export const PAGES = {
+  nosotros: { title: 'Nosotros', zh: '我们是谁', text: 'La columna vertebral de la corporación: manufactura, abastecimiento y exportación desde Guangzhou.', image: 'img/oficina-sede.webp' },
+  portafolio: { title: 'Portafolio', zh: '产品组合', text: 'Un ecosistema global de marcas para el mercado de posventa de motocicletas.', image: 'img/productos-repuestos.webp' },
+  mundo: { title: 'Mundo Huicheng', zh: '辉程世界', text: 'Presencia en América Latina, Asia y Europa con una red sólida de aliados comerciales.', image: 'img/hero-mapa.webp', map: true },
+  blog: { title: 'Blog', zh: '博客', text: 'Noticias de la cadena de suministro, calidad y logística de exportación.', image: 'img/embalaje.webp' },
+  contacto: { title: 'Contacto', zh: '联系我们', text: '¿Eres distribuidor o importador? Escríbenos y te enviamos una cotización.', image: 'img/chaleco-inspeccion.webp' },
+};
+
+// Adelantos que aparecen en Inicio, con botón "Ver más" hacia cada página.
+export const TEASERS = [
+  { id: 'nosotros', title: 'Nosotros', zh: '我们是谁', text: 'Nuestra historia, cómo operamos y nuestra misión y visión.', image: 'img/oficina-sede.webp' },
+  { id: 'portafolio', title: 'Portafolio', zh: '产品组合', text: 'Xuri Motos y las marcas independientes del grupo.', image: 'img/productos-repuestos.webp' },
+  { id: 'mundo', title: 'Mundo Huicheng', zh: '辉程世界', text: 'China, Ecuador, México y Cuba: dónde estamos y qué hacemos.', image: 'img/hero-mapa.webp', map: true },
+  { id: 'blog', title: 'Blog', zh: '博客', text: 'Calidad, embalaje y novedades de nuestro portafolio.', image: 'img/chaleco-inspeccion.webp' },
+];
+
+export const CTA = {
+  title: 'Importa con nosotros.',
+  zh: '与我们一起进口',
+  text: 'Cotizaciones con términos de pago y logística de exportación claros.',
+  button: 'Quiero ser distribuidor',
+};
+
+// ---------- Efectos de Inicio ----------
+// Cadena de suministro: el isotipo se dibuja trazo por trazo al hacer scroll (sección fijada).
+export const CHAIN = {
+  eyebrow: 'CADENA DE SUMINISTRO',
+  zh: '供应链',
+  title: 'Del origen al destino.',
+  steps: [
+    { title: 'Fábricas', zh: '工厂', text: 'Control directo de la manufactura y gestión integral de la producción desde el punto de origen.' },
+    { title: 'Ecosistema', zh: '生态系统', text: 'Plataforma tecnológica y operativa que integra, audita y optimiza toda la cadena de valor.' },
+    { title: 'Mercados', zh: '市场', text: 'Redes de valor globales y posicionamiento estratégico de nuestro portafolio de marcas.' },
+  ],
+};
+
+// Frase de la misión que se enciende palabra por palabra con el scroll.
+export const STATEMENT = {
+  text: 'Conectamos la fabricación de alta calidad con los mercados globales.',
+  zh: '连接优质制造与全球市场',
+};
