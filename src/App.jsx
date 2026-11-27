@@ -27,7 +27,6 @@ import BrandStrip from './components/BrandStrip.jsx';
 import Process from './components/Process.jsx';
 import Quality from './components/Quality.jsx';
 import Gallery from './components/Gallery.jsx';
-import Quote from './components/Quote.jsx';
 import Faq from './components/Faq.jsx';
 import Lightbox from './components/Lightbox.jsx';
 import { PAGES } from './data/content.js';
@@ -41,7 +40,7 @@ const SECTIONS = {
   portafolio: [Portfolio],
   mundo: [World, Headquarters],
   blog: [Blog],
-  contacto: [Quote, Contact, Faq],
+  contacto: [Contact, Faq],
 };
 // 'gracias' no aparece en el menú: se llega después de enviar el formulario.
 const PAGE_IDS = ['inicio', ...Object.keys(SECTIONS), 'gracias'];

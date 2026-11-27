@@ -155,7 +155,7 @@ export const CONTACT = {
   eyebrow: 'CONTACTO',
   eyebrowZh: '联系我们', // (*)
   title: '¿Eres distribuidor o importador?',
-  text: 'Importa con nosotros. Cuéntanos qué necesitas y te enviamos una cotización con términos de pago y logística de exportación claros.',
+  text: 'Importa con nosotros. Arma tu solicitud en 4 pasos y te enviamos una cotización con términos de pago y logística de exportación claros.',
   // Datos tomados de https://huicheng-global.com
   email: 'huicheng_group@outlook.com',
   phone: '+86 181 0251 3690',
@@ -294,14 +294,14 @@ export const GALLERY = {
     { key: 'todas', label: 'Todas' },
     { key: 'equipo', label: 'Equipo' },
     { key: 'embalaje', label: 'Embalaje' },
-    { key: 'merch', label: 'Merchandising' },
+    { key: 'merch', label: 'Promocionales' },
     { key: 'oficina', label: 'Oficina' },
   ],
   items: [
     { src: 'img/senaletica.webp', w: 1000, h: 819, title: 'Señalética corporativa', cat: 'oficina', photo: true },
     { src: 'img/camisa.webp', w: 594, h: 1000, title: 'Camisa ejecutiva', cat: 'equipo' },
     { src: 'img/caja.webp', w: 1000, h: 826, title: 'Caja de embalaje', cat: 'embalaje' },
-    { src: 'img/tote.webp', w: 563, h: 1000, title: 'Tote bag', cat: 'merch' },
+    { src: 'img/tote.webp', w: 563, h: 1000, title: 'Bolso de tela', cat: 'merch' },
     { src: 'img/chaleco.webp', w: 666, h: 1000, title: 'Chaleco de seguridad', cat: 'equipo' },
     { src: 'img/presentacion.webp', w: 1000, h: 672, title: 'Presentación corporativa', cat: 'oficina', photo: true },
     { src: 'img/gorra.webp', w: 1000, h: 652, title: 'Gorra corporativa', cat: 'merch' },
@@ -311,18 +311,13 @@ export const GALLERY = {
     { src: 'img/tarjetas.webp', w: 1000, h: 990, title: 'Tarjeta digital y física', cat: 'oficina' },
     { src: 'img/credencial.webp', w: 862, h: 1000, title: 'Credencial corporativa', cat: 'equipo' },
     { src: 'img/termo.webp', w: 397, h: 1000, title: 'Termo metálico', cat: 'merch' },
-    { src: 'img/oficina-sede.webp', w: 1920, h: 817, title: 'Sede en Guangzhou', cat: 'oficina', photo: true },
     { src: 'img/camiseta.webp', w: 811, h: 1000, title: 'Camiseta promocional', cat: 'merch' },
     { src: 'img/lanyard.webp', w: 1000, h: 692, title: 'Portacredencial', cat: 'merch' },
   ],
 };
 
-// ---------- Cotizador rápido (Contacto) ----------
+// ---------- Opciones del formulario de cotización (Contacto) ----------
 export const QUOTE = {
-  eyebrow: 'COTIZADOR RÁPIDO',
-  eyebrowZh: '快速报价', // (*)
-  title: 'Arma tu solicitud en 3 pasos.',
-  text: 'Elige marcas, productos y destino. Te armamos el mensaje para que lo envíes por WhatsApp o por correo.',
   brands: [
     { key: 'Xuri Motos', logo: 'marca/marca-xuri-motos.svg', h: 34 },
     { key: 'Orijinaru', logo: 'marca/marca-orijinaru.svg', h: 40 },

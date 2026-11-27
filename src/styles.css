@@ -514,17 +514,13 @@ body.no-scroll .wa { display: none; }
 .loader__bar span { display: block; height: 100%; background: var(--rojo); transform-origin: left; transform: scaleX(0); animation: loader-bar .75s 0s cubic-bezier(.4, 0, .2, 1) forwards; }
 @keyframes loader-bar { to { transform: scaleX(1); } }
 
-/* Cortina entre páginas */
+/* Cortina entre páginas: desvanecido blanco rápido y discreto */
 .curtain {
   position: fixed; inset: 0; z-index: 110; pointer-events: none;
-  display: grid; place-items: center; background: var(--rojo);
-  transform: translateX(-100%); visibility: hidden;
+  background: var(--blanco); opacity: 0; visibility: hidden;
 }
-.curtain img { width: 64px; height: auto; opacity: 0; transform: scale(.7); transition: opacity .25s, transform .4s; }
-.curtain--in { visibility: visible; transform: none; transition: transform .26s cubic-bezier(.7, 0, .3, 1); pointer-events: auto; }
-.curtain--in img { opacity: 1; transform: none; transition-delay: .08s; }
-.curtain--out { visibility: visible; transform: translateX(100%); transition: transform .32s cubic-bezier(.7, 0, .3, 1); }
-.curtain--out img { opacity: 0; transform: scale(1.15); }
+.curtain--in { visibility: visible; opacity: 1; transition: opacity .26s ease; pointer-events: auto; }
+.curtain--out { visibility: visible; opacity: 0; transition: opacity .32s ease; }
 
 /* Volver arriba (encima del botón de WhatsApp) */
 .totop {
@@ -579,17 +575,18 @@ body.no-scroll .totop { display: none; }
 .wmap__line { fill: none; stroke: rgba(255, 255, 255, .35); stroke-width: 3; stroke-dasharray: 4 12; transition: stroke .3s; }
 .wmap__comet {
   fill: none; stroke: var(--rojo); stroke-width: 7; stroke-linecap: round;
-  stroke-dasharray: 80 920; animation: wmap-flow 3.3s linear infinite; animation-delay: var(--dl);
+  stroke-dasharray: 1000; stroke-dashoffset: 1000;
   filter: drop-shadow(0 0 6px rgba(174, 25, 47, .9));
 }
 @keyframes wmap-flow { from { stroke-dashoffset: 1000; } to { stroke-dashoffset: 0; } }
+.wmap.is-in .wmap__comet { animation: wmap-flow 1.6s cubic-bezier(.4, 0, .2, 1) forwards; animation-delay: calc(var(--dl) * -1 + .3s); }
 .wmap__route.is-on .wmap__line { stroke: var(--mostaza); stroke-dasharray: none; }
 .wmap__route.is-on .wmap__comet { stroke: var(--mostaza); filter: drop-shadow(0 0 8px rgba(217, 168, 29, .9)); }
 
 .wmap__pin { cursor: pointer; outline: none; }
 .wmap__hit { fill: transparent; }
 .wmap__dot { fill: var(--rojo); stroke: var(--blanco); stroke-width: 5; transition: transform .25s; transform-box: fill-box; transform-origin: center; }
-.wmap__pulse { fill: var(--rojo); opacity: .6; transform-box: fill-box; transform-origin: center; animation: wmap-pulse 2.2s ease-out infinite; }
+.wmap__pulse { fill: var(--rojo); opacity: .6; transform-box: fill-box; transform-origin: center; animation: wmap-pulse 2.2s ease-out 3; }
 .wmap__pin--hub .wmap__pulse { animation-duration: 1.6s; }
 @keyframes wmap-pulse { from { transform: scale(1); opacity: .6; } to { transform: scale(3.6); opacity: 0; } }
 .wmap__label {
@@ -606,7 +603,7 @@ body.no-scroll .totop { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .loader__iso path, .loader__word, .loader__bar span { animation: none; opacity: 1; transform: none; }
   .bstrip__track, .wmap__comet, .wmap__pulse, .nf__code { animation: none; }
-  .wmap__comet { stroke-dasharray: none; opacity: .5; }
+  .wmap__comet { stroke-dasharray: none; stroke-dashoffset: 0; opacity: .5; }
   .curtain { display: none; }
 }
 
@@ -635,27 +632,6 @@ body.no-scroll .totop { display: none; }
 .ty__wa a { color: var(--rojo); font-weight: 700; }
 @media (max-width: 760px) { .ty__steps { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .ty__ring, .ty__tick { animation: none; stroke-dashoffset: 0; } }
-
-/* =========================================================
-   Cursor personalizado (solo con mouse): aro rojo + isotipo
-   ========================================================= */
-.hcursor { display: none; }
-.has-fine-pointer .hcursor { display: block; }
-.hcursor__ring, .hcursor__dot {
-  position: fixed; left: 0; top: 0; z-index: 85; pointer-events: none;
-  transform: translate3d(calc(var(--cx, -100px) - 50%), calc(var(--cy, -100px) - 50%), 0);
-}
-.hcursor__ring {
-  width: 38px; height: 38px; border: 2px solid var(--rojo); border-radius: 50%;
-  transition: transform .18s ease-out, width .25s, height .25s, background .25s, border-color .25s, opacity .2s;
-}
-.hcursor__dot { width: 12px; height: auto; transition: opacity .2s; }
-.cursor-hover .hcursor__ring { width: 62px; height: 62px; background: rgba(174, 25, 47, .1); }
-.cursor-hover .hcursor__dot { opacity: 0; }
-.cursor-down .hcursor__ring { width: 30px; height: 30px; }
-.cursor-out .hcursor__ring, .cursor-out .hcursor__dot { opacity: 0; }
-body.no-scroll .hcursor { display: none; }
-@media (prefers-reduced-motion: reduce) { .hcursor { display: none !important; } }
 
 /* =========================================================
    v4 · Cómo trabajamos
@@ -706,7 +682,7 @@ body.no-scroll .hcursor { display: none; }
 .proc__caption span { color: var(--mostaza); font-style: italic; font-weight: 800; margin-right: 4px; }
 .proc__map { width: 100%; height: auto; overflow: visible; }
 .proc__route { fill: none; stroke: rgba(255, 255, 255, .45); stroke-width: 4; stroke-dasharray: 6 14; }
-.proc__route--glow { stroke: var(--rojo); stroke-width: 7; stroke-dasharray: 90 910; stroke-linecap: round; animation: wmap-flow 3.6s linear infinite; filter: drop-shadow(0 0 6px rgba(174, 25, 47, .9)); }
+.proc__route--glow { stroke: var(--rojo); stroke-width: 7; stroke-dasharray: 1000; stroke-linecap: round; animation: wmap-flow 2.2s cubic-bezier(.4, 0, .2, 1) forwards; filter: drop-shadow(0 0 6px rgba(174, 25, 47, .9)); }
 .proc__ship { fill: var(--blanco); stroke: var(--rojo); stroke-width: 6; }
 .proc__pin { fill: var(--rojo); stroke: var(--blanco); stroke-width: 5; }
 .proc__label { font-family: var(--f-sub); font-weight: 800; font-size: 44px; fill: var(--blanco); }
@@ -884,8 +860,8 @@ body.no-scroll .hcursor { display: none; }
 @keyframes qt-type { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 .qt__actions { margin-top: 22px; display: grid; gap: 10px; justify-items: start; }
 .qt__send { position: relative; overflow: hidden; }
-.qt__sheet[data-ready] .qt__send { box-shadow: 0 0 0 0 rgba(174, 25, 47, .5); animation: qt-glow 1.8s ease-out infinite; }
-.qt__sheet[data-ready] .qt__send::after { content: ''; position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .45), transparent); animation: qt-shine 2.4s ease-in-out infinite; }
+.qt__sheet[data-ready] .qt__send { box-shadow: 0 0 0 0 rgba(174, 25, 47, .5); animation: qt-glow 1.8s ease-out 2; }
+.qt__sheet[data-ready] .qt__send::after { content: ''; position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .45), transparent); animation: qt-shine 2.4s ease-in-out 1 forwards; }
 @keyframes qt-glow { 70% { box-shadow: 0 0 0 14px rgba(174, 25, 47, 0); } 100% { box-shadow: 0 0 0 0 rgba(174, 25, 47, 0); } }
 @keyframes qt-shine { 60%, 100% { left: 130%; } }
 .qt__send.is-off, .qt__mail.is-off { opacity: .4; pointer-events: none; }
@@ -928,3 +904,14 @@ body.no-scroll .hcursor { display: none; }
   .gal__item::after { display: none; }
   .gal__grid.is-in .gal__item { animation: none; }
 }
+
+/* Contacto + cotizador unidos */
+.qt__steps .form { margin-top: 2px; }
+.qt__steps .field input, .qt__steps .field textarea { background: var(--blanco); }
+.field__opt { font-weight: 500; color: var(--texto-suave); }
+.qt__step > .field__error { margin-top: 10px; }
+.qt__submit { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+.qt__side { position: sticky; top: calc(var(--header-h) + 24px); display: grid; gap: 28px; }
+.qt__side .qt__sheet { position: static; }
+.qt__info { margin-top: 0; padding: 0 4px; }
+@media (max-width: 900px) { .qt__side { position: static; } }

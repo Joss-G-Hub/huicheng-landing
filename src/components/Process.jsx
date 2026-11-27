@@ -7,7 +7,7 @@ import Eyebrow from './Eyebrow.jsx';
 // el texto sigue moviéndose, así que la página nunca se siente trabada.
 // En celular cada paso muestra su imagen debajo del texto.
 
-// Mini mapa del paso "Envío": ruta de China a América con un punto que la recorre.
+// Mini mapa del paso "Envío": la ruta de China a América se dibuja una vez y el punto la recorre.
 const ROUTE = 'M1708 612 Q1149 250 590 758';
 function ShipMap() {
   return (
@@ -16,7 +16,7 @@ function ShipMap() {
       <path d={ROUTE} className="proc__route" />
       <path d={ROUTE} className="proc__route proc__route--glow" pathLength="1000" />
       <circle className="proc__ship" r="16">
-        <animateMotion dur="3.6s" repeatCount="indefinite" path={ROUTE} />
+        <animateMotion dur="2.2s" repeatCount="1" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1" path={ROUTE} />
       </circle>
       <circle cx="1708" cy="612" r="16" className="proc__pin" />
       <circle cx="590" cy="758" r="13" className="proc__pin" />
@@ -82,7 +82,7 @@ export default function Process() {
             <div className={`proc__visual${steps[active].img ? '' : ' is-dark'}`}>
               {steps.map((s, i) => (
                 <div key={s.key} className={`proc__slide${i === active ? ' is-on' : ''}${s.img ? '' : ' proc__slide--map'}`}>
-                  <Visual step={s} />
+                  <Visual key={i === active ? 'on' : 'off'} step={s} />
                 </div>
               ))}
               <p className="proc__caption"><span>{String(active + 1).padStart(2, '0')}</span> {steps[active].title}</p>

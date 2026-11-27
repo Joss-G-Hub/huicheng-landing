@@ -15,7 +15,7 @@ const useColumns = () => {
   }, []);
   return n;
 };
-const SPEEDS = [0.03, -0.03, 0.05];
+const SPEEDS = [0.012, -0.012, 0.02]; // parallax suave
 
 export default function Gallery() {
   const [filter, setFilter] = useState('todas');
