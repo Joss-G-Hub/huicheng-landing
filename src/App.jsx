@@ -76,7 +76,6 @@ export default function App() {
             <Statement />
             <SupplyChain />
             <BrandStrip />
-            <Process />
             <Teasers />
             <Headquarters />
             <CtaBand />
