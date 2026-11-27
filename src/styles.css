@@ -775,6 +775,7 @@ body.no-scroll .totop { display: none; }
 .gal__grid.is-in .gal__item::after { animation: gal-wipe .7s cubic-bezier(.7, 0, .2, 1) both; animation-delay: calc(var(--k) * 60ms + 120ms); }
 @keyframes gal-wipe { to { transform: scaleX(0); } }
 .gal__item img { display: block; width: 100%; height: auto; padding: 12% 14%; transition: transform .6s cubic-bezier(.2, .8, .2, 1); }
+.gal__item:not(.gal__item--photo) img { max-height: 380px; object-fit: contain; }
 .gal__item--photo img { padding: 0; }
 .gal__item:hover img, .gal__item:focus-visible img { transform: scale(1.07); }
 .gal__cap {

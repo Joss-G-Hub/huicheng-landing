@@ -251,7 +251,7 @@ export const THANKS = {
   ],
 };
 
-// ---------- Cómo trabajamos (Inicio y Nosotros) ----------
+// ---------- Cómo trabajamos (Nosotros) ----------
 // Imágenes tomadas de las aplicaciones del Manual Huicheng 2026.
 export const PROCESS = {
   eyebrow: 'CÓMO TRABAJAMOS',
