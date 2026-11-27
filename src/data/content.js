@@ -250,3 +250,99 @@ export const THANKS = {
     { title: 'Te contactamos', zh: '联系', text: 'Te escribimos para resolver dudas y coordinar el siguiente paso.' },
   ],
 };
+
+// ---------- Cómo trabajamos (Inicio y Nosotros) ----------
+// Imágenes tomadas de las aplicaciones del Manual Huicheng 2026.
+export const PROCESS = {
+  eyebrow: 'CÓMO TRABAJAMOS',
+  eyebrowZh: '合作流程', // (*)
+  title: 'De tu pedido a tu bodega.',
+  text: 'Un proceso claro en cuatro pasos, con documentación y control en cada etapa.',
+  steps: [
+    { key: 'cotizacion', title: 'Cotización', zh: '报价', img: 'img/proforma.webp', w: 707, h: 1000,
+      text: 'Nos cuentas qué productos y marcas necesitas y te enviamos una proforma con precios, términos de pago y condiciones de exportación.' },
+    { key: 'inspeccion', title: 'Inspección de calidad', zh: '质检', img: 'img/inspeccion-tablet.webp', w: 721, h: 1000,
+      text: 'Antes de embarcar, la mercancía se revisa en origen y el resultado queda registrado en un informe de inspección técnica.' },
+    { key: 'embalaje', title: 'Embalaje', zh: '包装', img: 'img/caja.webp', w: 1000, h: 826,
+      text: 'Empacamos en cajas y cintas con la identidad Huicheng, pensadas para proteger el producto durante el transporte internacional.' },
+    { key: 'envio', title: 'Envío', zh: '发货', img: null,
+      text: 'Coordinamos la logística de exportación desde China hasta el mercado de destino, con acompañamiento comercial y postventa.' },
+  ],
+};
+
+// ---------- Calidad garantizada (Nosotros) ----------
+// Puntos de control tomados del "Informe de Inspección Técnica" del manual.
+export const QUALITY = {
+  eyebrow: 'CALIDAD GARANTIZADA',
+  eyebrowZh: '品质保证', // (*)
+  title: 'Nada sale sin pasar inspección.',
+  text: 'Cada pedido se revisa en origen con nuestro informe de inspección técnica, con evidencia fotográfica y un estado final claro antes del embarque.',
+  checks: ['Dimensiones', 'Peso', 'Acabado', 'Prueba de resistencia', 'Prueba de caída'],
+  fails: ['Acabado', 'Prueba de caída'], // solo para mostrar cómo se ve un rechazo
+  approved: { label: 'Aprobado', en: 'APPROVED', note: 'Todos los puntos cumplen: la mercancía queda lista para embalaje y envío.' },
+  rejected: { label: 'Rechazado', en: 'REJECTED', note: 'Si un punto no cumple, se reporta con evidencia antes del embarque.' },
+};
+
+// ---------- Galería "Huicheng por dentro" (Nosotros) ----------
+// photo: true = foto a sangre; si no, producto recortado sobre fondo claro.
+export const GALLERY = {
+  eyebrow: 'HUICHENG POR DENTRO',
+  eyebrowZh: '走进辉程', // (*)
+  title: 'Una identidad que se vive.',
+  text: 'Así se ve Huicheng en la oficina, en el equipo de trabajo y en cada envío.',
+  filters: [
+    { key: 'todas', label: 'Todas' },
+    { key: 'equipo', label: 'Equipo' },
+    { key: 'embalaje', label: 'Embalaje' },
+    { key: 'merch', label: 'Merchandising' },
+    { key: 'oficina', label: 'Oficina' },
+  ],
+  items: [
+    { src: 'img/senaletica.webp', w: 1000, h: 819, title: 'Señalética corporativa', cat: 'oficina', photo: true },
+    { src: 'img/camisa.webp', w: 594, h: 1000, title: 'Camisa ejecutiva', cat: 'equipo' },
+    { src: 'img/caja.webp', w: 1000, h: 826, title: 'Caja de embalaje', cat: 'embalaje' },
+    { src: 'img/tote.webp', w: 563, h: 1000, title: 'Tote bag', cat: 'merch' },
+    { src: 'img/chaleco.webp', w: 666, h: 1000, title: 'Chaleco de seguridad', cat: 'equipo' },
+    { src: 'img/presentacion.webp', w: 1000, h: 672, title: 'Presentación corporativa', cat: 'oficina', photo: true },
+    { src: 'img/gorra.webp', w: 1000, h: 652, title: 'Gorra corporativa', cat: 'merch' },
+    { src: 'img/cintas.webp', w: 1000, h: 395, title: 'Cintas de embalaje', cat: 'embalaje' },
+    { src: 'img/casco.webp', w: 1000, h: 719, title: 'Casco de protección', cat: 'equipo' },
+    { src: 'img/libreta.webp', w: 661, h: 1000, title: 'Libreta ejecutiva', cat: 'merch' },
+    { src: 'img/tarjetas.webp', w: 1000, h: 990, title: 'Tarjeta digital y física', cat: 'oficina' },
+    { src: 'img/credencial.webp', w: 862, h: 1000, title: 'Credencial corporativa', cat: 'equipo' },
+    { src: 'img/termo.webp', w: 397, h: 1000, title: 'Termo metálico', cat: 'merch' },
+    { src: 'img/oficina-sede.webp', w: 1920, h: 817, title: 'Sede en Guangzhou', cat: 'oficina', photo: true },
+    { src: 'img/camiseta.webp', w: 811, h: 1000, title: 'Camiseta promocional', cat: 'merch' },
+    { src: 'img/lanyard.webp', w: 1000, h: 692, title: 'Portacredencial', cat: 'merch' },
+  ],
+};
+
+// ---------- Cotizador rápido (Contacto) ----------
+export const QUOTE = {
+  eyebrow: 'COTIZADOR RÁPIDO',
+  eyebrowZh: '快速报价', // (*)
+  title: 'Arma tu solicitud en 3 pasos.',
+  text: 'Elige marcas, productos y destino. Te armamos el mensaje para que lo envíes por WhatsApp o por correo.',
+  brands: [
+    { key: 'Xuri Motos', logo: 'marca/marca-xuri-motos.svg', h: 34 },
+    { key: 'Orijinaru', logo: 'marca/marca-orijinaru.svg', h: 40 },
+    { key: 'Horux', logo: 'marca/marca-horux.svg', h: 34 },
+    { key: 'Accexuri', logo: 'marca/marca-accexuri.svg', h: 18 },
+  ],
+  products: ['Repuestos', 'Motores', 'Llantas', 'Accesorios', 'Indumentaria'],
+  countries: ['México', 'Ecuador', 'Cuba', 'Otro país'],
+};
+
+// ---------- Preguntas frecuentes (Contacto) ----------
+export const FAQ = {
+  eyebrow: 'PREGUNTAS FRECUENTES',
+  eyebrowZh: '常见问题', // (*)
+  title: 'Antes de importar con nosotros.',
+  items: [
+    { q: '¿Cómo solicito una cotización?', a: 'Usa el cotizador rápido o el formulario de esta página. Te respondemos con una proforma que incluye precios, términos de pago y condiciones de exportación.' },
+    { q: '¿Puedo ser distribuidor de sus marcas?', a: 'Sí. Trabajamos con distribuidores e importadores. Escríbenos con los datos de tu empresa y tu mercado, y te contamos las condiciones.' },
+    { q: '¿A qué países exportan?', a: 'Hoy tenemos presencia en México, Cuba y Ecuador, y nuestras marcas llegan a América Latina, Asia y Europa. Si tu país no está en la lista, escríbenos y revisamos la logística.' },
+    { q: '¿Cómo controlan la calidad?', a: 'La mercancía se revisa en origen antes del embarque y el resultado queda registrado en un informe de inspección técnica con evidencia fotográfica.' },
+    { q: '¿Qué marcas manejan?', a: 'Xuri Motos y sus submarcas, Orijinaru, Horux y Accexuri: repuestos, motores, llantas, accesorios e indumentaria para motociclistas.' },
+  ],
+};

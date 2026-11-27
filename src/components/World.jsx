@@ -19,7 +19,8 @@ export default function World() {
             <li
               key={c.name}
               data-tilt
-              className={`world__item reveal${active === c.name ? ' is-active' : ''}`}
+              className="world__item reveal"
+              data-active={active === c.name || undefined}
               style={{ '--d': `${i * 90}ms` }}
               onMouseEnter={() => setActive(c.name)}
               onMouseLeave={() => setActive(null)}

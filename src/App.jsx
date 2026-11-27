@@ -24,6 +24,12 @@ import Curtain from './components/Curtain.jsx';
 import NotFound from './components/NotFound.jsx';
 import Thanks from './components/Thanks.jsx';
 import BrandStrip from './components/BrandStrip.jsx';
+import Process from './components/Process.jsx';
+import Quality from './components/Quality.jsx';
+import Gallery from './components/Gallery.jsx';
+import Quote from './components/Quote.jsx';
+import Faq from './components/Faq.jsx';
+import Lightbox from './components/Lightbox.jsx';
 import { PAGES } from './data/content.js';
 import { useRoute } from './lib/router.js';
 import { useMotion } from './lib/motion.js';
@@ -31,11 +37,11 @@ import { usePageTransition } from './lib/transition.js';
 
 // Qué secciones muestra cada página del menú.
 const SECTIONS = {
-  nosotros: [About, Operations, Mission],
+  nosotros: [About, Operations, Process, Quality, Gallery, Mission],
   portafolio: [Portfolio],
   mundo: [World, Headquarters],
   blog: [Blog],
-  contacto: [Contact],
+  contacto: [Quote, Contact, Faq],
 };
 // 'gracias' no aparece en el menú: se llega después de enviar el formulario.
 const PAGE_IDS = ['inicio', ...Object.keys(SECTIONS), 'gracias'];
@@ -71,6 +77,7 @@ export default function App() {
             <Statement />
             <SupplyChain />
             <BrandStrip />
+            <Process />
             <Teasers />
             <Headquarters />
             <CtaBand />
@@ -90,6 +97,7 @@ export default function App() {
       <Footer />
       <BackToTop />
       <WhatsAppButton />
+      <Lightbox />
     </>
   );
 }

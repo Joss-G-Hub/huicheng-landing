@@ -26,6 +26,9 @@ Inicio · Nosotros · Portafolio · Mundo · Blog · Contacto
 - Pantalla de carga con el logo y transición animada entre páginas.
 - Mapa interactivo con las rutas de exportación y banda de marcas en movimiento.
 - Botones de WhatsApp y "volver arriba", y página 404 personalizada.
+- Proceso de importación paso a paso, inspección de calidad interactiva y galería con zoom.
+- Cotizador rápido y preguntas frecuentes en Contacto.
+- Cursor personalizado y página de agradecimiento tras enviar el formulario.
 - Diseño responsive para computadora, tablet y celular.
 
 ## Estructura
