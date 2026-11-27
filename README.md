@@ -22,13 +22,13 @@ Inicio · Nosotros · Portafolio · Mundo · Blog · Contacto
 - Diseño fiel al manual de marca (colores, tipografías y logos).
 - Navegación por páginas con menú fijo y menú adaptado a celular.
 - Efectos de parallax y animaciones al hacer scroll.
-- Formulario de contacto con validación de campos.
+- Formulario de cotización en 4 pasos (marcas, productos, país y datos) con validación y proforma en vivo.
 - Pantalla de carga con el logo y transición animada entre páginas.
 - Mapa interactivo con las rutas de exportación y banda de marcas en movimiento.
 - Botones de WhatsApp y "volver arriba", y página 404 personalizada.
 - Proceso de importación paso a paso, inspección de calidad interactiva y galería con zoom.
-- Cotizador rápido y preguntas frecuentes en Contacto.
-- Cursor personalizado y página de agradecimiento tras enviar el formulario.
+- Preguntas frecuentes en Contacto.
+- Página de agradecimiento tras enviar el formulario.
 - Diseño responsive para computadora, tablet y celular.
 
 ## Estructura
